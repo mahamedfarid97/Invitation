@@ -1,0 +1,378 @@
+/* start reset*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+body {
+  font-family: "tajwal";
+  font-weight: 400;
+  color: var(--color-primary);
+  background-color: #e5e5e5;
+}
+
+:root {
+  --color-secondary: #ea580b;
+  --color-primary: #123971;
+  --color-shadow: #979797;
+}
+
+/* end reset*/
+/* shared */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 8px;
+  width: 100%;
+}
+.form-group label {
+  font-size: 22px;
+  color: var(--color-primary);
+  font-weight: bold;
+}
+.form-group .form-control {
+  width: 100%;
+}
+.form-group input {
+  height: 45px;
+}
+.form-group input,
+.form-group textarea {
+  padding: 8px 19px;
+  border: 1px solid var(--color-secondary);
+  border-radius: 10px;
+  color: #272626;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+.form-group input:focus-visible, .form-group input:focus,
+.form-group textarea:focus-visible,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-secondary) !important;
+  box-shadow: 0 0 3px var(--color-secondary);
+}
+.form-group input::-moz-placeholder, .form-group textarea::-moz-placeholder {
+  color: #cfcfcf;
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #cfcfcf;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  height: 115px;
+  width: 200px;
+}
+.logo img {
+  width: 200px;
+  height: 45px;
+  margin-top: 20px;
+}
+.logo span {
+  display: inline-flex;
+  align-self: flex-end;
+  font-size: 26px;
+  color: #1a3569;
+}
+
+/* shared */
+.main_content {
+  width: 95%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: space-around;
+  color: #1a3569 !important;
+}
+.main_content > section {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.main_content .left_section {
+  width: 60%;
+}
+.main_content .img_container {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 7px;
+}
+.main_content .img_container img {
+  width: 100%;
+  height: 100%;
+  height: 550px;
+}
+
+.left_section .text-container p {
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 37px;
+}
+.left_section .text-container p:not(:last-of-type) {
+  margin-bottom: 50px;
+}
+
+.right_section .img_container {
+  display: none;
+}
+.right_section .count_down {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 115px;
+  overflow: hidden;
+}
+.right_section .count_down p {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.right_section .count_down p span:first-of-type {
+  font-size: 50px;
+  font-weight: 800;
+  position: relative;
+}
+.right_section .count_down p span:first-of-type:not(#seconds):after {
+  content: ":";
+  position: absolute;
+  left: 103%;
+}
+.right_section .count_down p span:last-of-type {
+  font-size: 22px;
+  font-weight: 600;
+}
+.right_section .form-container {
+  background-color: #efefef;
+  border-radius: 20px;
+  padding: 15px;
+  padding-bottom: 70px;
+  position: relative;
+}
+.right_section .form-container form {
+  width: 90%;
+  margin: auto;
+}
+.right_section .form-container form .form-group label {
+  display: flex;
+  justify-content: space-between;
+}
+.right_section .form-container form .form-group label span:first-of-type {
+  width: 50%;
+}
+.right_section .form-container form .form-group label span:last-of-type {
+  direction: rtl;
+}
+.right_section .form-container form textarea {
+  height: 100px;
+}
+.right_section .form-container form .calendar_container {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  background: var(--color-primary);
+  border: 1px solid black;
+  color: white;
+  width: 200%;
+  left: -100%;
+  position: absolute;
+  height: 47px;
+  border-radius: 5px;
+  padding: 3px 10px;
+}
+.right_section .form-container form .calendar_container span,
+.right_section .form-container form .calendar_container button {
+  font-size: 20px;
+  color: white;
+}
+.right_section .form-container form .calendar_container button {
+  width: 170px;
+  border-radius: 25px;
+  padding: 6px;
+  border: 0px;
+  background-color: var(--color-secondary);
+}
+.right_section .form-container form .calendar_container .select_date {
+  height: 90%;
+  margin: auto;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 15px;
+  padding: 10px;
+  width: 300px;
+}
+.right_section .form-container form .calendar_container .select_date span {
+  color: var(--color-primary);
+}
+.right_section .form-container form .calendar_container .select_date #day_time_type {
+  font-weight: 800;
+}
+.right_section .form-container form .calendar_container .select_date #openModal {
+  margin-top: 10px;
+  cursor: pointer;
+}
+.right_section .form-container form .calendar_container .select_date #openModal img {
+  height: 100%;
+  width: 100%;
+}
+.right_section .form-container form .calendar_container .select_date .selected_day {
+  color: var(--color-secondary);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.modal .modal-content {
+  background-color: var(--color-primary);
+  margin: 11% auto;
+  border-radius: 5px;
+  width: 500px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+.modal .modal-content .close {
+  color: #aaa;
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 32px;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background: white;
+  border-radius: 32px;
+  width: 32px;
+  height: 32px;
+  text-align: center;
+}
+.modal .modal-content .close:hover,
+.modal .modal-content .close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.calendar {
+  margin-top: 10px;
+}
+.calendar .day {
+  color: white;
+  padding: 10px 20px;
+}
+.calendar .timeslots {
+  padding: 0px 20px;
+  height: 400px;
+  overflow-y: scroll;
+}
+.calendar .timeslots .timeslot {
+  background-color: white;
+  text-align: center;
+  color: black;
+  padding: 8px 12px;
+  margin: 5px;
+  border-radius: 5px;
+  height: 40px;
+  color: var(--color-primary);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.calendar .timeslots .timeslot:hover, .calendar .timeslots .timeslot.selected {
+  background-color: var(--color-secondary) !important;
+  color: white;
+}
+
+#captcha {
+  width: 100%;
+  margin: auto;
+}
+
+@media only screen and (max-width: 1250px) {
+  .main_content .left_section .img_container {
+    margin-top: 5%;
+  }
+  .main_content .left_section .img_container img {
+    height: 400px;
+  }
+  .main_content .left_section .text-container p {
+    font-size: 30px;
+    line-height: 32px;
+  }
+  .main_content .left_section .text-container p:not(:last-of-type) {
+    margin-bottom: 40px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .main_content {
+    width: 95%;
+    margin-right: 2%;
+    margin-left: 2%;
+    flex-direction: column;
+  }
+  .main_content .img_container {
+    margin-top: 0%;
+  }
+  .main_content .img_container img {
+    height: 500px;
+  }
+  .main_content .left_section, .main_content .right_section {
+    width: 95%;
+    margin: auto;
+  }
+  .main_content .left_section .img_container {
+    display: none;
+  }
+  .main_content .left_section .text-container p {
+    font-size: 25px;
+    line-height: 27px;
+  }
+  .main_content .left_section .text-container p:not(:last-of-type) {
+    margin-bottom: 30px;
+  }
+  .main_content .right_section .img_container {
+    display: block;
+  }
+  .main_content .right_section .form-container {
+    margin-bottom: 100px;
+  }
+  .main_content .right_section .calendar_container {
+    height: 180px !important;
+    flex-direction: column;
+    gap: 5px;
+    height: auto;
+    flex-direction: column;
+    width: 95% !important;
+    left: 2.5% !important;
+  }
+  .main_content .right_section .calendar_container .select_date {
+    height: auto !important;
+    width: 100% !important;
+  }
+  .main_content .right_section .calendar_container .select_date span {
+    font-size: 18px !important;
+  }
+  .modal-content {
+    width: 90% !important;
+  }
+}/*# sourceMappingURL=style.css.map */

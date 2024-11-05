@@ -1,0 +1,15 @@
+@font-face {
+  font-family: "tajwal";
+  src: url("../assets/Fonts/Tajawal-Regular.ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "tajwal";
+  src: url("../assets/Fonts/Tajawal-Medium.ttf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "tajwal";
+  src: url("../assets/Fonts/Tajawal-Bold.ttf");
+  font-weight: 800;
+}/*# sourceMappingURL=fonts.css.map */

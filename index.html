@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./css/style.css" rel="stylesheet">
+    <link href="./css/fonts.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+        integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/inputmask/4.0.9/inputmask/inputmask.min.js"
+        integrity="sha512-DVfS/GbZzLMmxBL/CW92N84eHP2Fq9d+r9RKbvctcvzISVfu+WvD+MCvbK9j8I6nVLrntGo3UUVrNFUDX0ukBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./script.js" defer></script>
+    <script src="./calender.js" defer></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+</head>
+
+<body>
+    <article class="main_content">
+        <section class="left_section">
+            <div class="logo">
+                <img src="./assets/logo.svg">
+                <span>Saudi Arabia</span>
+            </div>
+            <div class="text-container">
+                <p>Real Happiness Starts When We Quit The Screens.So Turn Off Those Devices And Let's Celebrate Our
+                    Loved Ones! Fill In The Form To Book A Celebration Car From Budget. </p>
+                <p dir="rtl">
+                    الفرحة الحقيقية عمرها ماكانت ورا الشاشة, الفرحة الحقيقية ماتبدأ الا لمن تسكر الشاشة خلونا نحتفل
+                    بأحبابنا اللي يستاهلون وعبو بياناتكم تحت عشان تحجزون سيارة الاحتفالات من بدجت.</p>
+            </div>
+            <div class="img_container">
+                <img src="/assets/car.png">
+            </div>
+        </section>
+        <section class="right_section">
+            <div class="count_down">
+                <p><span id="days">00</span><span>Days</span></p>
+                <p><span id="hours">00</span><span>Hours</span></p>
+                <p><span id="minutes">00</span><span>Min</span></p>
+                <p><span id="seconds">00</span><span>Sec</span></p>
+            </div>
+            <div class="form-container">
+                <form id="form" action="?" method="POST">
+                    <div class="form-group">
+                        <label for="first_name"><span>First Name</span><span>الإسم </span></label>
+                        <input type="text" name="first_name" id="first_name" class="form-control"
+                            placeholder="First Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label><span>Friend Name</span><span>إسم الصديق </span></label>
+                        <input type="text" id="friend_name" name="friend_name" class="form-control"
+                            placeholder="Friend Name">
+                    </div>
+                    <div class="form-group">
+                        <label><span>Mobile</span><span>رقم الجوال </span></label>
+                        <input type="text" class="form-control" id="mobile" name="mobile"
+                            placeholder="+966 *** *** ****" required>
+                    </div>
+                    <div class="form-group">
+                        <label><span>Email</span><span>البريد الإلكترونى </span></label>
+                        <input type="email" id="email" name="email" class="form-control"
+                            placeholder="example@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label><span>City </span><span>المدينة</span></label>
+                        <input type="text" id="city" name="city" class="form-control" placeholder="City" required>
+                    </div>
+                    <div class="form-group">
+                        <label><span>Occasion </span><span>المناسبة</span></label>
+                        <input type="text" class="form-control" placeholder="Occasion" id="occasion" name="occasion">
+                    </div>
+                    <div class="form-group">
+                        <label><span>Short summary of your friend </span><span>نبذة عن صديقك</span></label>
+                        <textarea type="text" class="form-control" placeholder="summary" id="summary"
+                            name="summary"></textarea>
+                    </div>
+                    <div id="captcha">
+                        <div class="g-recaptcha" data-sitekey="6LcTKLYpAAAAALyHoyurl1xF1_HrUcjkdi_ZMXPY
+                        "></div>
+                    </div>
+
+                    <div class="calendar_container">
+                        <span>Select Your Prefered time</span>
+                        <p class="select_date"><span class="selected_day">Tuesday :</span>
+                            <span id="start_date">9:00</span>
+                            <span class="to">to</span>
+                            <span id="end_date">10:00</span>
+                            <span id="day_time_type">AM</span>
+                            <span id="openModal"><img src="/assets/arrow-down.svg"></span>
+                        </p>
+                        <button id="button" type="submit">
+                            Apply</button>
+
+                    </div>
+
+                </form>
+
+            </div>
+            <div class="img_container">
+                <img src="/assets/car.png">
+            </div>
+        </section>
+    </article>
+
+
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="calendar">
+                <div class="day">Tuesday</div>
+                <div class="timeslots" id="timeslots"></div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script type="text/javascript">
+    emailjs.init('RvSB0szqA1HSbWdSC')
+</script>
+
+</html>

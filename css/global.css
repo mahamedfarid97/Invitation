@@ -1,0 +1,88 @@
+/* start reset*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+body {
+  font-family: "tajwal";
+  font-weight: 400;
+  color: var(--color-primary);
+  background-color: #e5e5e5;
+}
+
+:root {
+  --color-secondary: #ea580b;
+  --color-primary: #123971;
+  --color-shadow: #979797;
+}
+
+/* end reset*/
+/* shared */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 8px;
+  width: 100%;
+}
+.form-group label {
+  font-size: 22px;
+  color: var(--color-primary);
+  font-weight: bold;
+}
+.form-group .form-control {
+  width: 100%;
+}
+.form-group input {
+  height: 45px;
+}
+.form-group input,
+.form-group textarea {
+  padding: 8px 19px;
+  border: 1px solid var(--color-secondary);
+  border-radius: 10px;
+  color: #272626;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+.form-group input:focus-visible, .form-group input:focus,
+.form-group textarea:focus-visible,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-secondary) !important;
+  box-shadow: 0 0 3px var(--color-secondary);
+}
+.form-group input::-moz-placeholder, .form-group textarea::-moz-placeholder {
+  color: #cfcfcf;
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #cfcfcf;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  height: 115px;
+  width: 200px;
+}
+.logo img {
+  width: 200px;
+  height: 45px;
+  margin-top: 20px;
+}
+.logo span {
+  display: inline-flex;
+  align-self: flex-end;
+  font-size: 26px;
+  color: #1a3569;
+}
+
+/* shared *//*# sourceMappingURL=global.css.map */
