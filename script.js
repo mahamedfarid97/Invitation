@@ -38,7 +38,7 @@ document.getElementById('form')
 
 Inputmask({ mask: "+966 99 999 9999", placeholder: "*" }).mask("#mobile");
 function countdown() {
-    const endDate = new Date("Decemper 31, 2024 11:59:00").getTime();
+    const endDate = new Date("Decemper 31, 2024 23:59:00").getTime();
 
     const interval = setInterval(function () {
         const now = new Date().getTime();
