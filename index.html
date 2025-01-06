@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Social Vs Real</title>
     <link href="./css/style.css" rel="stylesheet">
     <link href="./css/fonts.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
@@ -26,11 +26,9 @@
                 <span>Saudi Arabia</span>
             </div>
             <div class="text-container">
-                <p>Real Happiness Starts When We Quit The Screens.So Turn Off Those Devices And Let's Celebrate Our
-                    Loved Ones! Fill In The Form To Book A Celebration Car From Budget. </p>
+                <p>Real happiness starts when we quit the screens. So, turn off those devices and let's celebrate our loved ones! Fill in the form to book a celebration car from Budget. </p>
                 <p dir="rtl">
-                    الفرحة الحقيقية عمرها ماكانت ورا الشاشة, الفرحة الحقيقية ماتبدأ الا لمن تسكر الشاشة خلونا نحتفل
-                    بأحبابنا اللي يستاهلون وعبو بياناتكم تحت عشان تحجزون سيارة الاحتفالات من بدجت.</p>
+                    الفرحة الحقيقية عمرها ماكانت ورا الشاشة، الفرحة الحقيقية ماتبدأ الا لمن تسكر الشاشة. خلونا نحتفل بأحبابنا اللي يستاهلون وعبو بياناتكم تحت عشان تحجزون سيارة الاحتفالات من بدجت.                </p>
             </div>
             <div class="img_container">
                 <img src="/assets/car.png">
@@ -79,18 +77,17 @@
                             name="summary"></textarea>
                     </div>
                     <div id="captcha">
-                        <div class="g-recaptcha" data-sitekey="6LcTKLYpAAAAALyHoyurl1xF1_HrUcjkdi_ZMXPY
-                        "></div>
+                        <div class="g-recaptcha" data-sitekey="6LcTKLYpAAAAALyHoyurl1xF1_HrUcjkdi_ZMXPY"></div>
                     </div>
 
                     <div class="calendar_container">
                         <span>Select Your Prefered time</span>
-                        <p class="select_date"><span class="selected_day">Tuesday :</span>
+                        <p class="select_date"><span class="selected_day" id="selected_day">Tuesday</span><span>:</span>
                             <span id="start_date">9:00</span>
                             <span class="to">to</span>
                             <span id="end_date">10:00</span>
-                            <span id="day_time_type">AM</span>
                             <span id="openModal"><img src="/assets/arrow-down.svg"></span>
+                            <span id="day_time_type" style="cursor: pointer;">AM</span>
                         </p>
                         <button id="button" type="submit">
                             Apply</button>
@@ -112,9 +109,11 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <div class="calendar">
-                <div class="day">Tuesday</div>
+                <div class="days">
+                </div>
                 <div class="timeslots" id="timeslots"></div>
             </div>
+            <span class="calendar_confirm">Confirm</span>
         </div>
     </div>
 </body>

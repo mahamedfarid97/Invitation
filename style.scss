@@ -23,25 +23,24 @@
     img {
       width: 100%;
       height: 100%;
-      height: 550px;
+      height: 500px;
     }
   }
 }
 .left_section {
   .text-container {
     p {
-      font-size: 35px;
+      font-size: 32px;
       font-weight: 400;
       line-height: 37px;
       &:not(:last-of-type) {
-        margin-bottom: 50px;
+        margin-bottom: 40px;
       }
     }
   }
-
 }
 .right_section {
-  .img_container{
+  .img_container {
     display: none;
   }
   .count_down {
@@ -79,15 +78,15 @@
     form {
       width: 90%;
       margin: auto;
-      .form-group{
-        label{
+      .form-group {
+        label {
           display: flex;
           justify-content: space-between;
-          span{
-            &:first-of-type{
+          span {
+            &:first-of-type {
               width: 50%;
             }
-            &:last-of-type{
+            &:last-of-type {
               direction: rtl;
             }
           }
@@ -135,7 +134,11 @@
             color: var(--color-primary);
           }
           #day_time_type {
-            font-weight: 800;
+            font-weight: 600;
+            background-color: var(--color-secondary);
+            color: white;
+            padding: 2px;
+            border-radius: 10px;
           }
           #openModal {
             margin-top: 10px;
@@ -166,11 +169,11 @@
     background-color: var(--color-primary);
     margin: 11% auto;
     border-radius: 5px;
-    width: 500px;
     padding-top: 15px;
     padding-bottom: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     position: relative;
+    height: 70%;
     .close {
       color: #aaa;
       font-size: 32px;
@@ -193,19 +196,39 @@
       text-decoration: none;
       cursor: pointer;
     }
+    .calendar_confirm{
+      width: 50%;
+      margin: auto;
+      margin: 0 auto;
+      border-radius: 10px;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      display: flex;
+      margin-top: 10px;
+      background-color: green;
+      color: white;
+      cursor: pointer;
+    }
   }
 }
 
 .calendar {
   margin-top: 10px;
+  display: flex;
+  gap:10px;
   .day {
     color: white;
     padding: 10px 20px;
+    cursor: pointer;
+    font-weight: 600;
+    &:hover,&.selected{
+      background-color: var(--color-secondary) !important;
+      color: white;
+    }
   }
   .timeslots {
     padding: 0px 20px;
-    height: 400px;
-    overflow-y: scroll;
     .timeslot {
       background-color: white;
       text-align: center;
@@ -226,29 +249,27 @@
     }
   }
 }
-#captcha{
- width: 100%;
- margin: auto;
+#captcha {
+  width: 100%;
+  margin: auto;
 }
 
 @media only screen and (max-width: 1250px) {
   .main_content {
-
-    .left_section{
-      .img_container
-      {
+    .left_section {
+      .img_container {
         margin-top: 5%;
-        img{
+        img {
           height: 400px;
         }
-      } 
-      .text-container{
-        p{
+      }
+      .text-container {
+        p {
           font-size: 30px;
           line-height: 32px;
-         &:not(:last-of-type) {
+          &:not(:last-of-type) {
             margin-bottom: 40px;
-        }
+          }
         }
       }
     }
@@ -260,39 +281,42 @@
     margin-right: 2%;
     margin-left: 2%;
     flex-direction: column;
-    .img_container 
-    {
+    .img_container {
       margin-top: 0%;
-      img{
+      padding-top: 50px;
+      padding-bottom: 50px;
+
+      img {
         height: 500px;
       }
     }
-    .left_section,.right_section{
+    .left_section,
+    .right_section {
       width: 95%;
-      margin:auto
+      margin: auto;
     }
-    .left_section{
-      .img_container{
+    .left_section {
+      .img_container {
         display: none;
       }
-      .text-container{
-        p{
+      .text-container {
+        p {
           font-size: 25px;
           line-height: 27px;
-         &:not(:last-of-type) {
+          &:not(:last-of-type) {
             margin-bottom: 30px;
-        }
+          }
         }
       }
     }
-    .right_section{
-      .img_container{
+    .right_section {
+      .img_container {
         display: block;
       }
-      .form-container{
+      .form-container {
         margin-bottom: 100px;
       }
-      .calendar_container{
+      .calendar_container {
         height: 180px !important;
         flex-direction: column;
         gap: 5px;
@@ -300,18 +324,52 @@
         flex-direction: column;
         width: 95% !important;
         left: 2.5% !important;
-        .select_date{
+        .select_date {
           height: auto !important;
           width: 100% !important;
-          span{
+          span {
             font-size: 18px !important;
           }
         }
       }
     }
   }
-  .modal-content{
+  .modal-content {
     width: 90% !important;
   }
 }
 
+@media only screen and (max-width: 600px) {
+  .main_content .img_container {
+    img {
+      height: 300px;
+    }
+  }
+}
+.modal-content{
+  width: 400px !important;
+}
+.calendar{
+  .days{
+    width: 30%;
+  }
+  .timeslots{
+    height: 100%;
+    overflow-y: auto;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .modal-content{
+    width: 350px !important;
+    margin: 20% auto !important;
+  }
+  .calendar{
+    .days{
+      width: 30%;
+    }
+    .timeslots{
+      height: 100%;
+      overflow-y: auto;
+    }
+  }
+}

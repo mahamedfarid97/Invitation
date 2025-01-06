@@ -13,6 +13,7 @@ document.getElementById('form')
         formValues.start_date=document.getElementById('start_date').innerText;
         formValues.end_date=document.getElementById('end_date').innerText;
         formValues.day_time_type=document.getElementById('day_time_type').innerText;
+        formValues.day=document.getElementById('selected_day');
         const isConfirmed=confirm("Confirm Booking ?");
         if(!isConfirmed) return;
         btn.value = 'Sending...';
@@ -38,7 +39,7 @@ document.getElementById('form')
 
 Inputmask({ mask: "+966 99 999 9999", placeholder: "*" }).mask("#mobile");
 function countdown() {
-    const endDate = new Date("Decemper 31, 2024 23:59:00").getTime();
+    const endDate = new Date("March 31, 2025 23:59:00").getTime();
 
     const interval = setInterval(function () {
         const now = new Date().getTime();
