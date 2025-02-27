@@ -13,12 +13,12 @@ document.getElementById('form')
         formValues.start_date=document.getElementById('start_date').innerText;
         formValues.end_date=document.getElementById('end_date').innerText;
         formValues.day_time_type=document.getElementById('day_time_type').innerText;
-        formValues.day=document.getElementById('selected_day');
+        formValues.day=document.getElementById('selected_day').innerText;
         const isConfirmed=confirm("Confirm Booking ?");
         if(!isConfirmed) return;
         btn.value = 'Sending...';
-        const serviceID = 'default_service';
-        const templateID = 'template_szhb9qv';
+        const serviceID = 'service_isspzpc';
+        const templateID = 'template_y5mzeu7';
         formValues['g-recaptcha-response']=captchaResponse;
         emailjs.send(serviceID, templateID, formValues)
             .then((response) => {
